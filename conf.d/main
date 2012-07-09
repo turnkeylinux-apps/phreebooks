@@ -19,3 +19,7 @@ chown -R root:root $WEBROOT
 chown -R www-data:www-data $WEBROOT/includes
 chown -R www-data:www-data $WEBROOT/my_files
 
+# tweak php settings
+CONF=/etc/php5/apache2/php.ini
+sed -i "s|;upload_tmp_dir.*|upload_tmp_dir = /tmp|" $CONF
+
