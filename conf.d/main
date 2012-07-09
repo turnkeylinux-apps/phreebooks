@@ -1,0 +1,13 @@
+#!/bin/sh -ex
+
+DB_NAME=phreedom
+DB_USER=phreedom
+DB_PASS=$(mcookie)
+
+ADMIN_NAME=admin
+ADMIN_PASS=turnkey
+ADMIN_MAIL=admin@example.com
+
+SRC=/usr/local/src
+WEBROOT=/var/www/phreedom
+
