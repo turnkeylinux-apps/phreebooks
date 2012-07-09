@@ -57,6 +57,12 @@ CONF=$WEBROOT/includes/configure.php
 sed -i "s|HTTP_SERVER.*|HTTP_SERVER', 'http://'.\$_SERVER['HTTP_HOST']);|" $CONF
 sed -i "s|HTTPS_SERVER.*|HTTPS_SERVER', 'https://'.\$_SERVER['HTTP_HOST']);|" $CONF
 
+# revert chown and secure configuration files
+chown -R root:root $WEBROOT/includes
+chown www-data:www-data $WEBROOT/includes/configure.php
+chmod 440 $WEBROOT/includes/configure.php
+chmod 640 $WEBROOT/my_files/phreedom/config.php
+
 # stop services
 /etc/init.d/mysql stop
 /etc/init.d/apache2 stop
