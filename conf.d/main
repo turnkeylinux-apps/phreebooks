@@ -30,6 +30,7 @@ a2enmod rewrite
 
 # start services
 /etc/init.d/mysql start
+/etc/init.d/apache2 start
 
 # setup the database
 MYSQL_BATCH="mysql --user=root --password=$MYSQL_PASS --batch"
@@ -38,6 +39,20 @@ MYSQL_ADMIN="mysqladmin --user=root --password=$MYSQL_PASS"
 $MYSQL_ADMIN create $DB_NAME
 $MYSQL_BATCH --execute "grant all privileges on $DB_NAME.* to $DB_USER@localhost identified by '$DB_PASS'; flush privileges;"
 
+# curl based install
+EMAIL=$(echo $ADMIN_MAIL | sed s/@/%40/)
+YEAR=$(date +%Y)
+URL="http://127.0.0.1/install/index.php?lang_en_us"
+CURL="curl -c /tmp/cookie -b /tmp/cookie"
+
+$CURL "${URL}&action=inspect" --data "lang=en_us&license=agree"
+$CURL "${URL}&action=install" --data "company_name=TurnKey+Phreedom&company_demo=0&user_username=$ADMIN_NAME&user_password=$ADMIN_PASS&user_pw_confirm=$ADMIN_PASS&user_email=$EMAIL&srvr_http=http%3A%2F%2F127.0.0.1&use_ssl=1&srvr_https=https%3A%2F%2F127.0.0.1&db_host=localhost&db_name=$DB_NAME&db_prefix=&db_username=$DB_USER&db_password=$DB_PASS&fy_month=01&fy_year=$YEAR&btn_install=Continue"
+
+rm -rf $WEBROOT/install
+rm -f $WEBROOT/install.txt
+rm -f /tmp/cookie
+
 # stop services
 /etc/init.d/mysql stop
+/etc/init.d/apache2 stop
 
