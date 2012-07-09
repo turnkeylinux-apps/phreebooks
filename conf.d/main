@@ -52,6 +52,11 @@ rm -rf $WEBROOT/install
 rm -f $WEBROOT/install.txt
 rm -f /tmp/cookie
 
+# set dynamic urls
+CONF=$WEBROOT/includes/configure.php
+sed -i "s|HTTP_SERVER.*|HTTP_SERVER', 'http://'.\$_SERVER['HTTP_HOST']);|" $CONF
+sed -i "s|HTTPS_SERVER.*|HTTPS_SERVER', 'https://'.\$_SERVER['HTTP_HOST']);|" $CONF
+
 # stop services
 /etc/init.d/mysql stop
 /etc/init.d/apache2 stop
