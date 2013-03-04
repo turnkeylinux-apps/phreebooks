@@ -13,7 +13,7 @@ WEBROOT=/var/www/phreedom
 
 # unpack and set permissions
 unzip $SRC/Phreedom*.zip -d $(dirname $WEBROOT)
-mv $(dirname $WEBROOT)/Phreedom $WEBROOT
+mv $(dirname $WEBROOT)/Phreedom* $WEBROOT
 rm $SRC/Phreedom*.zip
 chown -R root:root $WEBROOT
 chown -R www-data:www-data $WEBROOT/includes
