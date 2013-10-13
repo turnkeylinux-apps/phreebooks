@@ -6,7 +6,7 @@ dl() {
 }
 
 VERSION="PhreedomR35RC3.zip"
-URL="http://sourceforge.net/projects/phreedom/files/Current%20Stable/$VERSION"
+URL="http://sourceforge.net/projects/phreebooks/files/Current%20Stable/$VERSION"
 
 dl $URL /usr/local/src
 
