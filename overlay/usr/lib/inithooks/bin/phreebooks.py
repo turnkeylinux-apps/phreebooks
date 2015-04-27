@@ -1,5 +1,5 @@
 #!/usr/bin/python
-"""Set Phreedom admin password and email
+"""Set Phreebooks admin password and email
 
 Option:
     --pass=     unless provided, will ask interactively
@@ -43,24 +43,24 @@ def main():
     if not password:
         d = Dialog('TurnKey Linux - First boot configuration')
         password = d.get_password(
-            "Phreedom Password",
-            "Enter new password for the Phreedom 'admin' account.")
+            "Phreebooks Password",
+            "Enter new password for the Phreebooks 'admin' account.")
 
     if not email:
         if 'd' not in locals():
             d = Dialog('TurnKey Linux - First boot configuration')
 
         email = d.get_email(
-            "Phreedom Email",
-            "Enter email address for the Phreedom 'admin' account.",
+            "Phreebooks Email",
+            "Enter email address for the Phreebooks 'admin' account.",
             "admin@example.com")
 
     salt = ''.join((random.choice(string.letters+string.digits) for x in range(2)))
     hash = ':'.join([hashlib.md5(salt+password).hexdigest(), salt])
 
     m = MySQL()
-    m.execute('UPDATE phreedom.users SET admin_pass=\"%s\" WHERE admin_name=\"admin\";' % hash)
-    m.execute('UPDATE phreedom.users SET admin_email=\"%s\" WHERE admin_name=\"admin\";' % email)
+    m.execute('UPDATE phreebooks.users SET admin_pass=\"%s\" WHERE admin_name=\"admin\";' % hash)
+    m.execute('UPDATE phreebooks.users SET admin_email=\"%s\" WHERE admin_name=\"admin\";' % email)
 
 
 if __name__ == "__main__":
