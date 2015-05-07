@@ -4,17 +4,17 @@ NameVirtualHost *:443
 <VirtualHost *:80>
     UseCanonicalName Off
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/phreedom/
+    DocumentRoot /var/www/phreebooks/
 </VirtualHost>
 
 <VirtualHost *:443>
     SSLEngine on
     SSLCertificateFile /etc/ssl/certs/cert.pem
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/phreedom/
+    DocumentRoot /var/www/phreebooks/
 </VirtualHost>
 
-<Directory /var/www/phreedom/>
+<Directory /var/www/phreebooks/>
     Options +FollowSymLinks
     AllowOverride All
     order allow,deny
