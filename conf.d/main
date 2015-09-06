@@ -46,7 +46,7 @@ URL="http://127.0.0.1/install/index.php?lang_en_us"
 CURL="curl -c /tmp/cookie -b /tmp/cookie"
 
 $CURL "${URL}&action=inspect" --data "lang=en_us&license=agree"
-$CURL "${URL}&action=install" --data "company_name=TurnKey+Phreebooks&company_demo=0&user_username=$ADMIN_NAME&user_password=$ADMIN_PASS&user_pw_confirm=$ADMIN_PASS&user_email=$EMAIL&srvr_http=http%3A%2F%2F127.0.0.1&use_ssl=1&srvr_https=https%3A%2F%2F127.0.0.1&db_host=localhost&db_name=$DB_NAME&db_prefix=&db_username=$DB_USER&db_password=$DB_PASS&fy_month=01&fy_year=$YEAR&btn_install=Continue"
+$CURL "${URL}&action=install" --data "company_name=TurnKey+PhreeBooks&company_demo=0&user_username=$ADMIN_NAME&user_password=$ADMIN_PASS&user_pw_confirm=$ADMIN_PASS&user_email=$EMAIL&srvr_http=http%3A%2F%2F127.0.0.1&use_ssl=1&srvr_https=https%3A%2F%2F127.0.0.1&db_host=localhost&db_name=$DB_NAME&db_prefix=&db_username=$DB_USER&db_password=$DB_PASS&fy_month=01&fy_year=$YEAR&btn_install=Continue"
 
 rm -rf $WEBROOT/install
 rm -f $WEBROOT/install.txt

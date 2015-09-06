@@ -1,16 +1,16 @@
-Phreebooks - Enterprise Resource Planning
+PhreeBooks - Enterprise Resource Planning
 =======================================
 
-`Phreebooks`_ is a modular ERP web application for small businesses that
-can track inventory, accounting, contracts, check writing, bank account
-reconciliation, and more. The objective is to provide the small-business
-community with a free multi-language end-to-end enterprise management
-tool.
+`PhreeBooks`_ (formerly PhreeDom) is a modular ERP web application for 
+small businesses that can track inventory, accounting, contracts, check 
+writing, bank account reconciliation, and more. The objective is to 
+provide the small-business community with a free multi-language end-to
+-end enterprise management tool.
 
 This appliance includes all the standard features in `TurnKey Core`_,
 and on top of that:
 
-- Phreebooks configurations:
+- PhreeBooks configurations:
    
    - Installed from upstream source code to /var/www/phreebooks
 
@@ -25,9 +25,9 @@ Credentials *(passwords set at first boot)*
 -------------------------------------------
 
 -  Webmin, SSH, MySQL, Adminer: username **root**
--  Phreebooks: username **admin**
+-  PhreeBooks: username **admin**
 
 
-.. _Phreebooks: http://www.phreesoft.com/
+.. _PhreeBooks: http://www.phreesoft.com/phreebooks/
 .. _TurnKey Core: http://www.turnkeylinux.org/core
 .. _Adminer: http://www.adminer.org/

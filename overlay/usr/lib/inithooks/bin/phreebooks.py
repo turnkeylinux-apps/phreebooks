@@ -1,5 +1,5 @@
 #!/usr/bin/python
-"""Set Phreebooks admin password and email
+"""Set PhreeBooks admin password and email
 
 Option:
     --pass=     unless provided, will ask interactively
@@ -44,16 +44,16 @@ def main():
     if not password:
         d = Dialog('TurnKey Linux - First boot configuration')
         password = d.get_password(
-            "Phreebooks Password",
-            "Enter new password for the Phreebooks 'admin' account.")
+            "PhreeBooks Password",
+            "Enter new password for the PhreeBooks 'admin' account.")
 
     if not email:
         if 'd' not in locals():
             d = Dialog('TurnKey Linux - First boot configuration')
 
         email = d.get_email(
-            "Phreebooks Email",
-            "Enter email address for the Phreebooks 'admin' account.",
+            "PhreeBooks Email",
+            "Enter email address for the PhreeBooks 'admin' account.",
             "admin@example.com")
 
     inithooks_cache.write('APP_EMAIL', email)
