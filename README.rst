@@ -1,5 +1,5 @@
 PhreeBooks - Enterprise Resource Planning
-=======================================
+=========================================
 
 `PhreeBooks`_ (formerly PhreeDom) is a modular ERP web application for 
 small businesses that can track inventory, accounting, contracts, check 
