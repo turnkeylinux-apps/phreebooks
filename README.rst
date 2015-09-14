@@ -29,5 +29,5 @@ Credentials *(passwords set at first boot)*
 
 
 .. _PhreeBooks: http://www.phreesoft.com/phreebooks/
-.. _TurnKey Core: http://www.turnkeylinux.org/core
+.. _TurnKey Core: https://www.turnkeylinux.org/core
 .. _Adminer: http://www.adminer.org/
